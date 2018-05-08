@@ -1,11 +1,11 @@
-<?php declare(strict_types = 1);
+<?php declare(strict_types=1);
 
 namespace Cryptocurrency\Task2;
 
 class EmojiGenerator
 {
-	public function generate(): \Generator
-	{
+    public function generate(): \Generator
+    {
         // @todo
-	}
+    }
 }

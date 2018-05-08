@@ -1,21 +1,21 @@
-<?php declare(strict_types = 1);
+<?php declare(strict_types=1);
 
 namespace Cryptocurrency\Task1;
 
 class CoinMarket
 {
-	public function addCurrency(Currency $currency): void
-	{
+    public function addCurrency(Currency $currency): void
+    {
         // @todo
-	}
+    }
 
-	public function maxPrice(): float
-	{
+    public function maxPrice(): float
+    {
         // @todo
-	}
+    }
 
-	public function getCurrencies(): array
-	{
+    public function getCurrencies(): array
+    {
         // @todo
-	}
+    }
 }

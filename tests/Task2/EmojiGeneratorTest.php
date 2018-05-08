@@ -7,33 +7,33 @@ use PHPUnit\Framework\TestCase;
 
 class EmojiGeneratorTest extends TestCase
 {
-	/**
-	 * @var EmojiGenerator
-	 */
-	private $generator;
+    /**
+     * @var EmojiGenerator
+     */
+    private $generator;
 
-	protected function setUp()
-	{
-		parent::setUp();
+    /**
+     * @dataProvider emojiDataProvider
+     * @param $expected
+     */
+    public function test_emoji_yields_correctly($expected)
+    {
+        $generator = $this->generator->generate();
 
-		$this->generator = new EmojiGenerator();
-	}
+        $this->assertEquals($expected, iterator_to_array($generator));
+    }
 
-	/**
-	 * @dataProvider emojiDataProvider
-	 * @param $expected
-	 */
-	public function test_emoji_yields_correctly($expected)
-	{
-		$generator = $this->generator->generate();
+    public function emojiDataProvider()
+    {
+        return [
+            [['🚀', '🚃', '🚄', '🚅', '🚇']]
+        ];
+    }
 
-		$this->assertEquals($expected, iterator_to_array($generator));
-	}
+    protected function setUp()
+    {
+        parent::setUp();
 
-	public function emojiDataProvider()
-	{
-		return [
-			[['🚀', '🚃', '🚄', '🚅', '🚇']]
-		];
-	}
+        $this->generator = new EmojiGenerator();
+    }
 }
