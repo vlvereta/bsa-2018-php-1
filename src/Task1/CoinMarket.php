@@ -4,7 +4,6 @@ namespace Cryptocurrency\Task1;
 
 class CoinMarket
 {
-    private $price;
     private $currencies;
 
     public function addCurrency(Currency $currency): void
@@ -13,11 +12,13 @@ class CoinMarket
     }
     public function maxPrice(): float
     {
+        $mPrice = null;
+
         foreach ($this->currencies as $c) {
-            $this->price = $c->getDailyPrice() > $this->price ? 
-                $c->getDailyPrice() : $this->price;
+            $mPrice = $c->getDailyPrice() > $mPrice ? 
+                $c->getDailyPrice() : $mPrice;
         }
-        return $this->price;
+        return $mPrice;
     }
     public function getCurrencies(): array
     {
